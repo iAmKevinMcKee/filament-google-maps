@@ -126,7 +126,7 @@ class Geocoder
 
     public function reverse(array|string $lat, ?string $lng = null): string
     {
-        $result = $this->reverseQuery(MapsHelper::getLatLng($lat, $lng))->first();
+        $result = $this->reverseQuery(MapsHelper::getLatLng($lat, $lng))?->first();
 
         if ($result) {
             return $result->getFormattedAddress();
