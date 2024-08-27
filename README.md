@@ -627,7 +627,7 @@ to the limitations on the number and mix of types - either 1 from Table 3 (like 
 ```php
     Geocomplete::make('location')
         ->types(['car_dealer', 'car_rental', 'car_repair'])
-        ->placesField('name')
+        ->placeField('name')
 ```
 
 In both modes, you may optionally specify fields to reverse geocode the selected address component data
