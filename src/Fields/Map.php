@@ -894,6 +894,4 @@ class Map extends Field
     {
         return $this->evaluate($this->mapType);
     }
-
-
 }
