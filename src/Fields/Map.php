@@ -71,7 +71,7 @@ class Map extends Field
 
     protected ?Closure $placeUpdatedUsing = null;
 
-    protected Closure|string $mapType = 'roadmap';
+    protected Closure|string $type = 'roadmap';
 
     protected Closure|array $drawingModes = [
         'marker'    => true,
@@ -822,9 +822,9 @@ class Map extends Field
             'debug'                  => $this->getDebug(),
             'gmaps'                  => MapsHelper::mapsUrl(false, $this->getDrawingControl() ? ['drawing'] : []),
             'polyOptions'            => $this->getPolyOptions(),
-            'rectangleOptions'       => $this->getRectangeOptions(),
+            'rectangleOptions'       => $this->getRectangleOptions(),
             'circleOptions'          => $this->getCircleOptions(),
-            'mapType'                => $this->getMapType(),
+            'mapType'                => $this->getType(),
         ]);
 
         //ray($config);
@@ -887,15 +887,15 @@ class Map extends Field
         return $this->evaluate($this->circleOptions);
     }
 
-    public function mapType(Closure|string $mapType): static
+    public function type(Closure|string $type): static
     {
-        $this->mapType = $mapType;
+        $this->type = $type;
 
         return $this;
     }
 
-    public function getMapType(): string
+    public function getType(): string
     {
-        return $this->evaluate($this->mapType);
+        return $this->evaluate($this->type);
     }
 }
