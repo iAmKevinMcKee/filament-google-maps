@@ -858,7 +858,7 @@ class Map extends Field
 
     public function rectangleOptions(Closure|array $rectangleOptions): static
     {
-        $this->recatangleOptions = $rectangleOptions;
+        $this->rectangleOptions = $rectangleOptions;
 
         return $this;
     }
