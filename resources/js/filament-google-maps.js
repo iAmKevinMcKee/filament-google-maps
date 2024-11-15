@@ -99,6 +99,8 @@ export default function filamentGoogleMapsField({
       "%c": ["country"],
       "%p": ["premise"],
       "%P": ["premise"],
+      "%sp": ["subpremise", "route"],
+      "%SP": ["subpremise", "route"],
     },
     drawingManager: null,
     overlays: [],
