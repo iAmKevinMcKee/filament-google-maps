@@ -70,6 +70,7 @@ export default function filamentGoogleMapsField({
   placeUpdatedUsing,
   hasReverseGeocodeUsing = false,
   hasPlaceUpdatedUsing = false,
+  mapType = 'roadmap',
 }) {
   return {
     state,
@@ -151,6 +152,7 @@ export default function filamentGoogleMapsField({
       this.map = new google.maps.Map(mapEl, {
         center: this.getCoordinates(),
         zoom: defaultZoom,
+        mapTypeId: google.maps.MapTypeId[mapType.toUpperCase()],
         ...controls,
       });
 
