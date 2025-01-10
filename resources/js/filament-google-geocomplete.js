@@ -73,22 +73,24 @@ export default function filamentGoogleGeocomplete({
       console.log("geocomplete init");
       this.mapEl = mapEl;
 
-      let typingTimer;
-      const doneTypingInterval = 300; // milliseconds
+      // let typingTimer;
+      // const doneTypingInterval = 300; // milliseconds
+      //
+      // geoComplete.addEventListener('input', () => {
+      //   clearTimeout(typingTimer);
+      //
+      //   if (geoComplete.value.length >= minChars) {
+      //     typingTimer = setTimeout(() => {
+      //       console.log('minChars met, loading GMaps');
+      //       this.loadGMaps();
+      //     }, doneTypingInterval);
+      //   } else {
+      //     console.log('minChars not met');
+      //   }
+      // });
 
-      geoComplete.addEventListener('input', () => {
-        clearTimeout(typingTimer);
-
-        if (geoComplete.value.length >= minChars) {
-          typingTimer = setTimeout(() => {
-            console.log('minChars met, loading GMaps');
-            this.loadGMaps();
-          }, doneTypingInterval);
-        } else {
-          console.log('minChars not met');
-        }
-      });
-      },
+      this.loadGMaps();
+    },
 
     createAutocomplete: function () {
       window.filamentGoogleMapsAPILoaded = true;
